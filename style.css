@@ -1,0 +1,581 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    padding: 20px 5vw;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
+}
+
+nav img {
+    width: 40px;
+}
+
+.ListNav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.ListNav a {
+    font-size: 1.1rem;
+    color: aliceblue;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.ListNav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+#linkMain {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(img/backmain.png) center/cover no-repeat;
+}
+
+.ContentTextMain {
+    text-align: center;
+    padding: 0 5vw;
+}
+
+.ContentTextMain h1 {
+    font-size: clamp(4rem, 12vw, 8rem);
+    color: aliceblue;
+    margin-bottom: 1rem;
+}
+
+.ContentTextMain p {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    color: aliceblue;
+    margin-bottom: 3rem;
+}
+
+.ContentTextMain button {
+    margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    width: clamp(180px, 40vw, 220px);
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    border-radius: 14px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 40px rgba(255, 255, 255, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.ContentTextMain button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.ContentTextMain button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: left 0.9s ease;
+}
+
+.ContentTextMain button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.9),
+        0 0 120px rgba(255, 255, 255, 0.7),
+        0 0 180px rgba(255, 255, 255, 0.4),
+        inset 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.ContentTextMain button:hover::before {
+    opacity: 0.8;
+}
+
+.ContentTextMain button:hover::after {
+    left: 100%;
+}
+
+.ContentTextMain button span {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+.ContentTextMain button:hover span {
+    text-shadow: 0 0 30px white;
+    transform: scale(1.05);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-16px);
+    }
+}
+
+#sectionOne,
+.ContainerPropriedadesTwo {
+    padding: 8rem 5vw;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sectionOne {
+    background: linear-gradient(0deg, rgba(3, 26, 15, 1) 0%, rgba(0, 2, 2, 1) 100%);
+}
+
+.ContainerPropriedadesTwo {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(3, 26, 15, 1) 100%);
+}
+
+
+.TitleContainerProp h2,
+.TitleSectionEQP h2 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: #fff;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+
+.ContainerCardsProp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.CardsProp {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    max-width: 300px;
+    transition: 0.3s ease;
+}
+
+.CardsProp:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.CardsProp img {
+    width: clamp(100px, 25vw, 200px);
+    margin-bottom: 1rem;
+}
+
+.CardsProp h2 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.CardsProp h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+
+.ButonProp {
+    margin-top: 6rem;
+}
+
+.ButonProp button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #000;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.ButonProp button:hover {
+    transform: scale(1.2);
+    background: #0f6;
+    box-shadow: 0 0 30px #0f6;
+}
+
+.ContainerEQP {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.cardEQP {
+    background: rgba(255, 255, 255, 0.021);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.cardEQP:hover {
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(14, 114, 14, 0.3);
+}
+
+.cardEQP img {
+    width: clamp(120px, 30vw, 200px);
+    margin-bottom: 1rem;
+}
+
+.cardEQP h3 {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+}
+
+.cardEQP h4 {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+
+footer {
+    padding: 1.5rem 5vw;
+    background: #084128;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.TextFooter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.TextFooter img {
+    width: 30px;
+}
+
+footer>div:last-child img {
+    width: 45px;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 4vw;
+    }
+
+    .ListNav ul {
+        gap: 1rem;
+    }
+
+    .ListNav a {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+
+    .ContentTextMain button {
+        width: 80vw;
+        max-width: 300px;
+    }
+
+    .ButonProp button {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ContentTextMain h1 {
+        font-size: 3.5rem;
+    }
+
+    .TitleContainerProp h2,
+    .TitleSectionEQP h2 {
+        font-size: 2.5rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+#mainutilize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background: #074a29;
+    background: linear-gradient(0deg, rgba(7, 74, 41, 1) 0%, rgba(2, 24, 13, 1) 64%, rgba(0, 0, 0, 1) 100%);
+}
+
+.ContainerTextMainUtilize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.sectionOneUtilize {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20rem;
+    align-items: center;
+    min-height: 100dvh;
+    background: #000000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(7, 74, 41, 1) 100%);
+}
+.LeftSectionOne {
+    width: 100%;
+    flex-direction: column;
+    padding-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.TitleLeft {
+    margin-top: 5rem;
+    display: flex;
+    font-size: 6rem;
+    align-items: center;
+}
+.ParagLeft {
+    padding-right: 30px;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.CardRequeriments{
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(240, 255, 255, 0.116);
+    color: #fff;
+    font-size: 1.5rem;
+}
+.CardRequeriments h3 {
+    margin-bottom: 2rem;
+}
+
+.CardRequeriments li {
+    color: aliceblue;
+    margin-bottom: 2rem;
+    
+}
+.CardRequeriments a {
+    text-decoration: none;
+}
+
+.downloadCode {
+    color: #ffffff;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+     background: #074a29;
+    background: linear-gradient(0deg, rgba(7, 74, 41, 1) 0%, rgba(2, 24, 13, 1) 64%, rgba(0, 0, 0, 1) 100%);
+}
+.titleDown {
+    margin-bottom: 10rem;
+}
+.BaixeAq button {
+    cursor: pointer;
+    box-shadow: #084128;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    background-color: #074a29;
+    border-radius: 20px;
+    padding: 1rem;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.4s ease-in-out;
+}
+.BaixeAq button:hover {
+    transform: scale(1.1);
+}
+.DocumentSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    padding-bottom: 10rem;
+    background: #000000;
+background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(7, 74, 41, 1) 100%);
+}
+.CardDocument {
+    color: #fff;
+    margin-top: 15rem;
+    font-size: 3rem;
+    text-align: center;
+}
+.CardDocument img {
+    width: 50rem;
+    
+}
+@media (max-width: 863px) {
+   strong h1 {
+    text-align: center;
+    font-size: 3rem;
+   }
+   .sectionOneUtilize{
+    flex-wrap: wrap;
+    gap: 0;
+   }
+   .LeftSectionOne{
+    flex-wrap: wrap;
+   }
+   .LeftSectionOne .ButonProp {
+    display: none;
+   }
+   .TitleLeft{
+    font-size: 2rem;
+   }
+    .TitleLeft img {
+    width: 5rem;
+   }
+   .ParagLeft p {
+    font-size: 1rem;
+   }
+   .CardRequeriments {
+    max-width: 100%;
+    height: 30rem;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    font-size: 1rem;   
+    margin-right: 0;
+   }
+
+   .titleDown {
+    margin-top: 5rem;
+    margin-top: 0;
+   }
+   .BaixeAq  {
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   }
+   .titleDown h1 {
+    margin-bottom: 0;
+    padding: 0;
+   }
+   .BaixeAq button {
+    margin-top: 2;
+   }
+  .downloadCode .ButonProp {
+    margin-top: 1rem;
+  }
+  .CardDocument {
+    margin-top: 4rem;
+  }
+  .CardDocument h3 {
+    font-size: 2rem;
+  }
+  .CardDocument img {
+    max-width: 20rem;
+  }
+}
+@media (max-width: 900px) {
+    
+    .sectionOneUtilize{
+    flex-wrap: wrap;
+    gap: 0;
+   }
+   .LeftSectionOne{
+    flex-wrap: wrap;
+   }
+}
+@media (min-width: 901px) {
+    
+    .sectionOneUtilize{
+    flex-wrap:wrap;
+    gap: 0;
+   }
+   .LeftSectionOne{
+    flex-wrap: wrap;
+   }
+}
+
+@media (min-width: 1380px) {
+    
+    .sectionOneUtilize{
+    flex-wrap: nowrap;
+    gap: 0;
+   }
+   .LeftSectionOne{
+    flex-wrap: wrap;
+   }
+}
